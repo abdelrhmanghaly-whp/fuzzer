@@ -29,7 +29,7 @@ bool parse_graph_input(const uint8_t* data, int size, int& n_out, std::vector<st
     if (idx+4<= size) {
         int raw_source;
         std::memcpy(&raw_source, data + idx, 4);
-        src=raw_source%n;
+        src=abs(raw_source)%n;
     }
     n_out=n;
     source_out=src;
