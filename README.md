@@ -13,19 +13,6 @@ Generates random graphs, runs two Dijkstra implementations on them, and crashes 
 - C++20 compiler
 - Python 3
 
-## Quick Start
-
-# 1. Generate test seeds
-python generate_seeds.py
-
-# 2. Build
-mkdir build && cd build
-cmake -DUSE_AFL=ON ..
-make
-
-# 3. Run fuzzer
-afl-fuzz -i ../corpora/seeds -o ../findings -m none -- ./fuzzer_afl## Input Format
-
 Binary format with 4-byte integers:
 - Number of nodes (n)
 - Number of edges (m)
@@ -38,8 +25,8 @@ Binary format with 4-byte integers:
 - Max 50,000 edges
 - Negative weights allowed
 
-## Results
 
+## Results
 - Crashes saved to `findings/default/crashes/`
 - Each crash file is an input that found a discrepancy
 - Error messages show what went wrong (size mismatch, distance mismatch, etc.)
