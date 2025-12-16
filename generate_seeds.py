@@ -3,13 +3,13 @@ import os
 
 def create_seed(filename, n, edges, source=0):
     with open(filename, 'wb') as f:
-        f.write(struct.pack('B', n))  # 1 byte: number of nodes
-        f.write(struct.pack('<I', len(edges)))  # 4 bytes: number of edges
+        f.write(struct.pack('i', n))  # 4 byte: number of nodes
+        f.write(struct.pack('<i', len(edges)))  # 4 bytes: number of edges
         for u, v, w in edges:
-            f.write(struct.pack('<H', u))  # 2 bytes: from
-            f.write(struct.pack('<H', v))  # 2 bytes: to
+            f.write(struct.pack('<i', u))  # 4 bytes: from
+            f.write(struct.pack('<i', v))  # 4 bytes: to
             f.write(struct.pack('<i', w))  # 4 bytes: w
-        f.write(struct.pack('B', source))  # 1 byte: src node
+        f.write(struct.pack('i', source))  # 4 byte: src node
 
 os.makedirs('corpora/seeds', exist_ok=True)
 create_seed('corpora/seeds/seed1.bin', 3, [(0,1,10), (1,2,20), (0,2,50)]) # triangle 3ady
