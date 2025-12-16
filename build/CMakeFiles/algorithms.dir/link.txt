@@ -1,0 +1,2 @@
+/usr/bin/ar qc libalgorithms.a CMakeFiles/algorithms.dir/src/algorithms/dijkstra.cpp.o CMakeFiles/algorithms.dir/src/reference/dijkstra_ref.cpp.o CMakeFiles/algorithms.dir/src/harness/input_parser.cpp.o CMakeFiles/algorithms.dir/src/harness/afl_harness.cpp.o
+/usr/bin/ranlib libalgorithms.a

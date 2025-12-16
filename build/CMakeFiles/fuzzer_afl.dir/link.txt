@@ -1,0 +1,1 @@
+afl-clang-fast++ -fsanitize=address,undefined CMakeFiles/fuzzer_afl.dir/src/harness/afl_harness.cpp.o -o fuzzer_afl  libalgorithms.a 

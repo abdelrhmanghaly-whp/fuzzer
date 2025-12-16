@@ -1,0 +1,6 @@
+"C:\Program Files\JetBrains\CLion 2025.1.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2025.1.2/bin/ninja/win/x64/ninja.exe" -G Ninja -DPython_EXECUTABLE=C:/Users/gholyo/CLionProjects/fuzzer/.venv/Scripts/python.exe -DPython3_EXECUTABLE=C:/Users/gholyo/CLionProjects/fuzzer/.venv/Scripts/python.exe -S C:\Users\gholyo\CLionProjects\fuzzer -B C:\Users\gholyo\CLionProjects\fuzzer\cmake-build-debug
+-- Building with AFL++ instrumentation and sanitizers
+-- Configuring done (0.2s)
+-- Generating done (0.1s)
+-- Build files have been written to: C:/Users/gholyo/CLionProjects/fuzzer/cmake-build-debug
+CMake File API: java.util.concurrent.ExecutionException: com.jetbrains.cidr.cpp.cmake.model.api.CMakeApiException: C:\Users\gholyo\CLionProjects\fuzzer\cmake-build-debug: target-algorithms-Debug-637e271035a203bc6df7.json: Cannot resolve compiler path 'afl-clang-fast++'
