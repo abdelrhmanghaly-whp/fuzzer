@@ -22,6 +22,8 @@ bool parse_graph_input(const uint8_t* data, int size, int& n_out, std::vector<st
         std::memcpy(&u, data + idx, 4); idx += 4;
         std::memcpy(&v, data + idx, 4); idx += 4;
         std::memcpy(&w, data + idx, 4); idx += 4;
+        if (u)u--;
+        if (v)v--;
         if (u>= n||v>= n||u<0||v<0) continue;
         graph_out[u].push_back({v, w});
     }
