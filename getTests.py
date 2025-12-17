@@ -15,17 +15,33 @@ def get(filename):
         id+=4
         m=struct.unpack('<i',data[id:id+4])[0]
         id+=4
-        for i in range(m):
+
+        res.append(f"n={n},m={m}")
+
+        valid_edges=[]
+        for i in range(min(m,1000)):
             if id+12>len(data):
                 break
             u=struct.unpack('<i',data[id:id+4])[0]; id+=4
             v=struct.unpack('<i',data[id:id+4])[0]; id+=4
             w=struct.unpack('<i',data[id:id+4])[0]; id+=4
-            res.append(f"{u}->{v}:weight={w}")
+            if 0<=u<n and 0<=v<n:
+                valid_edges.append(f"{u}->{v}:weight={w}")
+
+        res.append(f"valid edges: {len(valid_edges)}")
+        for e in valid_edges[:20]:
+            res.append(e)
+
+
 
         if id+4 <=len(data):
             src = struct.unpack('<i',data[id:id+4])[0]
-            res.append(f"\nSource:{src}")
+            if n>0:
+                src_calc=((src%n)+n)%n # 3shan n confirm no anomalies
+                res.append(f"source: {src} -> {src_calc}")
+                if src == -2147483648:
+                    res.append("neg source, (INT_MIN)")
+            # res.append(f"\nSource:{src}")
     except:
         res.append("Err")
 
@@ -41,9 +57,9 @@ def execute():
     combined=[]
     for crash in sorted(files):
         decoded = get(crash)
-        output_file = output_dir/f"{crash.name}.txt"
-        with open(output_file, 'w') as f:
-            f.write(decoded)
+        # output_file = output_dir/f"{crash.name}.txt"
+        # with open(output_file, 'w') as f:
+        #     f.write(decoded)
 
         combined.append(decoded)
         combined.append("\n"+"-"*50+"\n")

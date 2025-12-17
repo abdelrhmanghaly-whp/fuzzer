@@ -32,7 +32,7 @@ create_seed('corpora/seeds/seed5.bin', 2, [(0,0,5)]) # self looped
 # chains, multiple paths, negative cycles w shwyt weight trigger
 graph = [(i,j,i*10+j) for i in range(5) for j in range(5) if i!=j]
 create_seed('corpora/seeds/seed7.bin', 10, graph)
-create_seed('corpora/seeds/seed8.bin', 3, [(0,1,-5),(1,2,-5),(2,0,-5)])
+# create_seed('corpora/seeds/seed8.bin', 3, [(0,1,-5),(1,2,-5),(2,0,-5)])
 create_seed('corpora/seeds/seed9.bin', 10, [(i, i+1, i) for i in range(9)]) # chained
 create_seed('corpora/seeds/seed10.bin', 3, [(0,1,2000000000),(1,2,1)])
 
