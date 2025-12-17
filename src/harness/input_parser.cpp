@@ -1,5 +1,6 @@
 #include "harness/input_parser.hpp"
 #include <cstring>
+#include <cmath>
 
 bool parse_graph_input(const uint8_t* data, int size, int& n_out, std::vector<std::vector<edge>>& graph_out, int& source_out) {
     if(size<9)return false;
@@ -29,7 +30,7 @@ bool parse_graph_input(const uint8_t* data, int size, int& n_out, std::vector<st
     if (idx+4<= size) {
         int raw_source;
         std::memcpy(&raw_source, data + idx, 4);
-        src=abs(raw_source)%n;
+        src=std::abs(raw_source)%n;
     }
     n_out=n;
     source_out=src;

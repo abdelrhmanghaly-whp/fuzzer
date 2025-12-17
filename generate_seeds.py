@@ -3,7 +3,7 @@ import os
 
 def create_seed(filename, n, edges, source=0):
     with open(filename, 'wb') as f:
-        f.write(struct.pack('i', n))  # 4 byte: number of nodes
+        f.write(struct.pack('<i', n))  # 4 byte: number of nodes
         f.write(struct.pack('<i', len(edges)))  # 4 bytes: number of edges
         for u, v, w in edges:
             f.write(struct.pack('<i', u))  # 4 bytes: from

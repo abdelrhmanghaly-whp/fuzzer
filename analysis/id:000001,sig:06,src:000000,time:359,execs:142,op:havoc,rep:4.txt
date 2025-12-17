@@ -1,0 +1,6 @@
+File:id:000001,sig:06,src:000000,time:359,execs:142,op:havoc,rep:4
+1027423549->15677:weight=0
+1->0:weight=20
+131072->512:weight=12800
+
+Source:-2147483648
