@@ -19,4 +19,12 @@ create_seed('corpora/seeds/seed3.bin', 5, [(0,1,1), (3,4,1)]) # disconnected typ
 create_seed('corpora/seeds/seed4.bin', 1, []) # single node
 create_seed('corpora/seeds/seed5.bin', 2, [(0,0,5)]) # self looped
 create_seed('corpora/seeds/seed6.bin', 4, [(0,1,-100000),(1,2,100000)]) # wa7da kbera
+
+# chains, multiple paths, negative cycles w shwyt weight trigger
+graph = [(i,j,i*10+j) for i in range(5) for j in range(5) if i!=j]
+create_seed('corpora/seeds/seed7.bin', 10, graph)
+create_seed('corpora/seeds/seed8.bin', 3, [(0,1,-5),(1,2,-5),(2,0,-5)])
+create_seed('corpora/seeds/seed9.bin', 10, [(i, i+1, i) for i in range(9)]) # chained
+create_seed('corpora/seeds/seed10.bin', 3, [(0,1,2000000000),(1,2,1)])
+
 print("done")
