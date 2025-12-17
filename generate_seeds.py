@@ -9,7 +9,7 @@ def create_seed(filename, n, edges, source=0):
             f.write(struct.pack('<i', u))  # 4 bytes: from
             f.write(struct.pack('<i', v))  # 4 bytes: to
             f.write(struct.pack('<i', w))  # 4 bytes: w
-        f.write(struct.pack('i', source))  # 4 byte: src node
+        f.write(struct.pack('<i', source))  # 4 byte: src node
 
 os.makedirs('corpora/seeds', exist_ok=True)
 create_seed('corpora/seeds/seed1.bin', 3, [(0,1,10), (1,2,20), (0,2,50)]) # triangle 3ady
