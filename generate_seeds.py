@@ -15,4 +15,8 @@ os.makedirs('corpora/seeds', exist_ok=True)
 create_seed('corpora/seeds/seed1.bin', 3, [(0,1,10), (1,2,20), (0,2,50)]) # triangle 3ady
 create_seed('corpora/seeds/seed2.bin', 4, [(0,1,5), (1,2,-3), (2,3,2)]) # neg weights
 create_seed('corpora/seeds/seed3.bin', 5, [(0,1,1), (3,4,1)]) # disconnected type
+
+create_seed('corpora/seeds/seed4.bin', 1, []) # single node
+create_seed('corpora/seeds/seed5.bin', 2, [(0,0,5)]) # self looped
+create_seed('corpora/seeds/seed6.bin', 4, [(0,1,-100000),(1,2,100000)]) # wa7da kbera
 print("done")
